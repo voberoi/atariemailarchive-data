@@ -3,16 +3,18 @@
 
 This repository contains parsed and threaded email data from Jed Margolin's time as a hardware engineer at Atari.
 
-This data backs [atariemailarchive.org](https://atariemailarchive.org), which curates and showcases Jed's emails for your reading pleasure. The raw email data are in text files on [Jed's website](http://www.jmargolin.com/vmail/vmail.htm), where you can read more about his time there.
+This data backs [atariemailarchive.org](https://atariemailarchive.org), which curates and showcases Jed's emails. The raw email data are in text files on [Jed's website](http://www.jmargolin.com/vmail/vmail.htm), where you can read more about his time there.
+
+You can [read about how I made atariemailarchive.org here](https://vikramoberoi.com/how-i-made-atariemailarchive-org/).
 
 There are 4,128 messages and 2,846 threads in the archive.
 
 
 ## How is this data different from the text files on Jed's website?
 
-* *It's parsed!*
+* It's parsed.
   * Here's an example of what the raw data looks like: http://www.jmargolin.com/vmail/Vax88.txt
-* *It's threaded!*
+* It has conversation threads.
   * I read all 4,128 emails in the archive and threaded them manually. No, really I did. Yes, you're welcome.
 
 From my correspondence with Jed:
@@ -23,7 +25,7 @@ From my correspondence with Jed:
 >
 > No, I don't think there were threads. It probably hadn't been invented yet so it wouldn't be in the raw data. In fact, I don't think there was raw data, just ASCII text. And there wasn't much of a UI. It was just text.
 
-... so I instead read all the messages and if they were clearly replies or topically linked to prior messages then I threaded them. If you find obvious errors, let me know.
+I read every single message. If a message was clearly a reply to a prior messages then I added them to the same thread. If you find obvious errors, let me know.
 
 
 ## What's the schema?
@@ -40,7 +42,7 @@ There's one `messages` table with the following columns:
 * `subject`: the message subject
 * `body`: the message body
 
-## Please explain how senders, recipients, and carbon copies are formatted
+## How are senders, recipients, and CC formatted?
 
 From my correspondence with Jed:
 
@@ -61,7 +63,7 @@ From my correspondence with Jed:
 >  
 > @SYS$MAIL:JUNK was a mail distribution list called JUNK, where you could post anything, like what flavor Jello was for lunch that day.
 
-Here are three helpful messages from the archive that dig in further:
+Here are three messages from the archive that may also help you understand what is going on.
 
 * [What the #@%^ is SYS$MAIL?](https://atariemailarchive.org/thread/on-how-to-use-atari-s-mail-distribution-lists-31)
 * [A neat trick with mail](https://atariemailarchive.org/thread/on-a-clever-email-hack-19)
